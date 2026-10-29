@@ -1,0 +1,910 @@
+
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portofolio Rahmadhani Enggal Setya Putri, mahasiswa Pendidikan Teknologi Informasi.">
+    <title>Rahmadhani Enggal | Personal Portfolio</title>
+
+    <style>
+        /* ===== PENGATURAN DASAR ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        :root {
+            --cream: #f8f5ed;
+            --sage: #a8b5a0;
+            --green: #435847;
+            --dark: #26352a;
+            --brown: #806b54;
+            --white: #fffefa;
+            --line: #e5e1d6;
+        }
+
+        body {
+            font-family: "Segoe UI", Tahoma, sans-serif;
+            background: var(--cream);
+            color: var(--dark);
+            line-height: 1.8;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 88%;
+            max-width: 1100px;
+            margin: auto;
+        }
+
+        /* ===== NAVIGASI ===== */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(248, 245, 237, 0.95);
+            border-bottom: 1px solid var(--line);
+        }
+
+        nav {
+            min-height: 75px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
+        }
+
+        .logo {
+            font-family: Georgia, serif;
+            font-size: 25px;
+            font-weight: bold;
+            color: var(--green);
+            letter-spacing: -1px;
+        }
+
+        .logo span {
+            color: var(--brown);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+            font-size: 13px;
+        }
+
+        .nav-links a {
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--brown);
+        }
+
+        /* ===== HOME ===== */
+        .hero {
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            padding: 80px 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            align-items: center;
+            gap: 65px;
+        }
+
+        .label {
+            display: inline-block;
+            color: var(--green);
+            background: #e5e9df;
+            padding: 6px 15px;
+            border-radius: 30px;
+            font-size: 12px;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-family: Georgia, serif;
+            font-size: clamp(38px, 5vw, 66px);
+            line-height: 1.15;
+            font-weight: normal;
+            letter-spacing: -2px;
+            margin-bottom: 22px;
+        }
+
+        .hero h1 span {
+            color: var(--brown);
+            font-style: italic;
+        }
+
+        .hero p {
+            max-width: 540px;
+            color: #687064;
+            font-size: 15px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 11px 23px;
+            border: 1px solid var(--green);
+            border-radius: 5px;
+            background: var(--green);
+            color: white;
+            font-size: 13px;
+            transition: 0.3s;
+        }
+
+        .button:hover {
+            background: var(--dark);
+            transform: translateY(-2px);
+        }
+
+        .button-outline {
+            background: transparent;
+            color: var(--green);
+        }
+
+        .button-outline:hover {
+            color: white;
+        }
+
+        /* ===== ILUSTRASI PROFIL ===== */
+        /* Container bentuk kubah */
+.profile-art {
+    width: 280px;
+    height: 380px;
+    margin: 0 auto;
+    border-radius: 140px 140px 12px 12px; /* Membuat bentuk kubah */
+    position: relative;
+    overflow: hidden; /* Memotong foto & caption di dalam kubah */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Foto profil pas & tidak gepeng */
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* Teks caption di bagian bawah */
+.art-caption {
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+    text-align: center;
+    color: #26352ac;
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 500;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.6);
+    z-index: 2;
+}
+
+        /* ===== BAGIAN UMUM ===== */
+        section.content-section {
+            padding: 85px 0;
+        }
+
+        .section-heading {
+            margin-bottom: 35px;
+        }
+
+        .section-heading small {
+            color: var(--brown);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 11px;
+            font-weight: bold;
+        }
+
+        .section-heading h2 {
+            font-family: Georgia, serif;
+            font-size: clamp(30px, 4vw, 43px);
+            font-weight: normal;
+            line-height: 1.3;
+            margin-top: 8px;
+        }
+
+        .section-heading p {
+            color: #687064;
+            max-width: 600px;
+            margin-top: 12px;
+        }
+
+        /* ===== ABOUT ME ===== */
+        #about {
+            background: var(--white);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 55px;
+            align-items: start;
+        }
+
+        .about-card {
+            background: #edf0e8;
+            padding: 28px;
+            border-radius: 8px;
+        }
+
+        .about-card h3 {
+            font-family: Georgia, serif;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: var(--green);
+        }
+
+        .info-row {
+            padding: 12px 0;
+            border-bottom: 1px solid #d6ddcf;
+            font-size: 13px;
+        }
+
+        .info-row:last-child {
+            border-bottom: none;
+        }
+
+        .info-row span {
+            display: block;
+            color: #687064;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .info-row strong {
+            overflow-wrap: anywhere;
+        }
+
+        .about-text p {
+            color: #626b60;
+            font-size: 15px;
+            margin-bottom: 17px;
+        }
+
+        .quote {
+            border-left: 3px solid var(--brown);
+            padding: 10px 0 10px 18px;
+            margin-top: 25px;
+            color: var(--green);
+            font-family: Georgia, serif;
+            font-size: 20px;
+            font-style: italic;
+        }
+
+        /* ===== SKILLS ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .skill-card {
+            background: var(--white);
+            border: 1px solid var(--line);
+            padding: 27px;
+            border-radius: 7px;
+            transition: 0.3s;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--sage);
+        }
+
+        .skill-number {
+            font-family: Georgia, serif;
+            font-size: 29px;
+            color: var(--brown);
+            margin-bottom: 15px;
+        }
+
+        .skill-card h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .skill-card p {
+            color: #687064;
+            font-size: 13px;
+        }
+
+        /* ===== PROJECTS ===== */
+        #projects {
+            background: #e9ede4;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 7px;
+            overflow: hidden;
+            border: 1px solid #dfe4d8;
+        }
+
+        .project-cover {
+            min-height: 155px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #d8e0d1;
+            color: var(--green);
+            font-family: Georgia, serif;
+            font-size: 42px;
+            font-style: italic;
+        }
+
+        .project-card:nth-child(2) .project-cover {
+            background: #eee1d0;
+            color: var(--brown);
+        }
+
+        .project-card:nth-child(3) .project-cover {
+            background: #e5e4d8;
+        }
+
+        .project-info {
+            padding: 23px;
+        }
+
+        .project-info h3 {
+            font-size: 17px;
+            margin-bottom: 8px;
+        }
+
+        .project-info p {
+            color: #687064;
+            font-size: 13px;
+        }
+
+        .project-tag {
+            display: inline-block;
+            margin-top: 15px;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: var(--green);
+            background: #e9ede4;
+            padding: 5px 9px;
+        }
+
+        /* ===== ACHIEVEMENTS ===== */
+        .achievement-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .achievement-item {
+            display: grid;
+            grid-template-columns: 55px 1fr;
+            gap: 20px;
+            padding: 25px;
+            background: var(--white);
+            border: 1px solid var(--line);
+            border-radius: 7px;
+        }
+
+        .achievement-icon {
+            width: 48px;
+            height: 48px;
+            background: #e9ede4;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: var(--green);
+            font-size: 20px;
+        }
+
+        .achievement-item h3 {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        .achievement-item p {
+            color: #687064;
+            font-size: 13px;
+        }
+
+        /* ===== CONTACT ===== */
+        #contact {
+            background: var(--green);
+            color: var(--cream);
+        }
+
+        #contact .section-heading small {
+            color: #d8c8a9;
+        }
+
+        #contact .section-heading p {
+            color: #e0e5db;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .contact-intro h2 {
+            font-family: Georgia, serif;
+            font-weight: normal;
+            font-size: 39px;
+            line-height: 1.25;
+        }
+
+        .contact-intro p {
+            color: #e0e5db;
+            margin-top: 15px;
+        }
+
+        .contact-list {
+            display: grid;
+            gap: 12px;
+        }
+
+        .contact-link {
+            padding: 16px 18px;
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+
+        .contact-link:hover {
+            background: rgba(255,255,255,0.1);
+        }
+
+        .contact-link span {
+            display: block;
+            font-size: 11px;
+            color: #d8c8a9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .contact-link strong {
+            font-size: 14px;
+            overflow-wrap: anywhere;
+        }
+
+        /* ===== FOOTER ===== */
+        footer {
+            background: var(--dark);
+            color: #dce2d7;
+            text-align: center;
+            padding: 22px;
+            font-size: 12px;
+        }
+
+        /* ===== TAMPILAN HP ===== */
+        @media (max-width: 760px) {
+            .container {
+                width: 90%;
+            }
+
+            nav {
+                padding: 15px 0;
+                flex-direction: column;
+            }
+
+            .nav-links {
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 12px 18px;
+            }
+
+            .hero {
+                padding: 55px 0;
+            }
+
+            .hero-content,
+            .about-grid,
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 35px;
+            }
+
+            .profile-art {
+                min-height: 310px;
+            }
+
+            section.content-section {
+                padding: 60px 0;
+            }
+
+            .skills-grid,
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .hero h1 {
+                font-size: 43px;
+            }
+
+            .contact-intro h2 {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGASI -->
+    <header>
+        <nav class="container">
+            <a href="#home" class="logo">enggal<span>.</span></a>
+
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#achievements">Achievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- HOME -->
+    <main>
+        <section class="hero" id="home">
+            <div class="container hero-content">
+                <div>
+                    <span class="label">PERSONAL PORTFOLIO · 2026</span>
+
+                    <h1>
+                        Hello, I'm<br>
+                        <span>Rahmadhani</span><br>
+                        Enggal Setya Putri.
+                    </h1>
+
+                    <p>
+                        Mahasiswa S1 Pendidikan Teknologi Informasi yang
+                        sedang bertumbuh, mengeksplorasi dunia digital,
+                        dan belajar menciptakan hal-hal bermakna melalui teknologi.
+                    </p>
+
+                    <div class="hero-buttons">
+                        <a href="#about" class="button">Kenali Saya ↗</a>
+                        <a href="#projects" class="button button-outline">
+                            Lihat Karya
+                        </a>
+                    </div>
+                </div>
+
+                <div class="profile-art">
+    <div class="profile-img-container">
+        <img src="foto.jpg" alt="Foto Profil" class="profile-img">
+    </div>
+    <div class="art-caption">LEARN ⬝ CREATE ⬝ GROW</div>
+</div>
+            </div>
+        </section>
+
+        <!-- ABOUT ME -->
+        <section class="content-section" id="about">
+            <div class="container">
+                <div class="section-heading">
+                    <small>01 — About Me</small>
+                    <h2>Sedikit cerita tentang saya.</h2>
+                    <p>
+                        Mengenal pribadi, perjalanan belajar, dan hal-hal
+                        yang ingin saya kembangkan.
+                    </p>
+                </div>
+
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3>Personal Profile</h3>
+
+                        <div class="info-row">
+                            <span>Nama Lengkap</span>
+                            <strong>Rahmadhani Enggal Setya Putri</strong>
+                        </div>
+
+                        <div class="info-row">
+                            <span>NIM</span>
+                            <strong>26050974149</strong>
+                        </div>
+
+                        <div class="info-row">
+                            <span>Program Studi</span>
+                            <strong>S1 Pendidikan Teknologi Informasi</strong>
+                        </div>
+
+                        <div class="info-row">
+                            <span>Bidang Minat</span>
+                            <strong>Teknologi, Pendidikan, dan Kreativitas Digital</strong>
+                        </div>
+                    </div>
+
+                    <div class="about-text">
+                        <p>
+                            Halo! Saya Rahmadhani Enggal Setya Putri,
+                            mahasiswa S1 Pendidikan Teknologi Informasi.
+                            Saya sedang menjalani perjalanan untuk mengenal
+                            lebih jauh dunia teknologi sekaligus memahami
+                            bagaimana teknologi dapat digunakan dalam proses
+                            belajar dan mengajar.
+                        </p>
+
+                        <p>
+                            Bagi saya, menjadi mahasiswa bukan hanya tentang
+                            menyelesaikan tugas, tetapi juga tentang berani
+                            mencoba, belajar dari kesalahan, dan terus
+                            memperbaiki diri. Saya ingin mengembangkan
+                            kemampuan digital, kreativitas, komunikasi,
+                            serta cara berpikir yang terstruktur.
+                        </p>
+
+                        <p>
+                            Melalui portofolio ini, saya ingin mendokumentasikan
+                            proses belajar, tugas perkuliahan, dan karya yang
+                            saya buat. Saya berharap setiap pengalaman dapat
+                            menjadi langkah kecil menuju pribadi yang lebih
+                            mandiri, kreatif, dan siap menghadapi perkembangan
+                            teknologi.
+                        </p>
+
+                        <div class="quote">
+                            "Tidak harus langsung hebat, yang penting
+                            terus belajar dan berani berkembang."
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SKILLS -->
+        <section class="content-section" id="skills">
+            <div class="container">
+                <div class="section-heading">
+                    <small>02 — What I Can Do</small>
+                    <h2>Things I'm learning.</h2>
+                    <p>
+                        Kemampuan yang ingin saya bangun dan kembangkan
+                        selama menempuh pendidikan.
+                    </p>
+                </div>
+
+                <div class="skills-grid">
+                    <article class="skill-card">
+                        <div class="skill-number">01.</div>
+                        <h3>Web Development</h3>
+                        <p>
+                            Mempelajari struktur halaman web menggunakan
+                            HTML serta mempercantik tampilannya dengan CSS.
+                        </p>
+                    </article>
+
+                    <article class="skill-card">
+                        <div class="skill-number">02.</div>
+                        <h3>Digital Technology</h3>
+                        <p>
+                            Mengeksplorasi perangkat digital dan berbagai
+                            aplikasi untuk mendukung kegiatan belajar.
+                        </p>
+                    </article>
+
+                    <article class="skill-card">
+                        <div class="skill-number">03.</div>
+                        <h3>Creative Learning</h3>
+                        <p>
+                            Mengembangkan ide media presentasi dan materi
+                            pembelajaran yang menarik serta mudah dipahami.
+                        </p>
+                    </article>
+
+                    <article class="skill-card">
+                        <div class="skill-number">04.</div>
+                        <h3>Problem Solving</h3>
+                        <p>
+                            Berlatih memahami masalah, mencari informasi,
+                            dan menyusun solusi secara bertahap.
+                        </p>
+                    </article>
+
+                    <article class="skill-card">
+                        <div class="skill-number">05.</div>
+                        <h3>Communication</h3>
+                        <p>
+                            Mengasah kemampuan menyampaikan ide,
+                            berdiskusi, dan bekerja sama dalam kelompok.
+                        </p>
+                    </article>
+
+                    <article class="skill-card">
+                        <div class="skill-number">06.</div>
+                        <h3>Continuous Learning</h3>
+                        <p>
+                            Membiasakan diri untuk belajar hal baru,
+                            menerima masukan, dan memperbaiki hasil kerja.
+                        </p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS -->
+        <section class="content-section" id="projects">
+            <div class="container">
+                <div class="section-heading">
+                    <small>03 — Selected Works</small>
+                    <h2>My projects & creations.</h2>
+                    <p>
+                        Ruang untuk menampilkan hasil tugas kuliah,
+                        latihan mandiri, dan karya digital.
+                    </p>
+                </div>
+
+                <div class="projects-grid">
+                    <article class="project-card">
+                        <div class="project-cover">01 / Web</div>
+                        <div class="project-info">
+                            <h3>Personal Portfolio</h3>
+                            <p>
+                                Website untuk memperkenalkan diri,
+                                mendokumentasikan kemampuan, dan menampilkan
+                                perjalanan belajar.
+                            </p>
+                            <span class="project-tag">HTML · CSS</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-cover">02 / Design</div>
+                        <div class="project-info">
+                            <h3>Digital Presentation</h3>
+                            <p>
+                                Proyek presentasi digital untuk menyampaikan
+                                informasi secara terstruktur dan menarik.
+                            </p>
+                            <span class="project-tag">Presentation</span>
+                        </div>
+                    </article>
+
+                    <article class="project-card">
+                        <div class="project-cover">03 / Edu</div>
+                        <div class="project-info">
+                            <h3>Learning Media</h3>
+                            <p>
+                                Ide pengembangan media pembelajaran berbasis
+                                teknologi untuk membantu proses belajar.
+                            </p>
+                            <span class="project-tag">Education</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACHIEVEMENTS -->
+        <section class="content-section" id="achievements">
+            <div class="container">
+                <div class="section-heading">
+                    <small>04 — Achievements & Experience</small>
+                    <h2>Every step matters.</h2>
+                    <p>
+                        Dokumentasi pengalaman, pelatihan, sertifikat,
+                        dan pencapaian selama proses belajar.
+                    </p>
+                </div>
+
+                <div class="achievement-list">
+                    <article class="achievement-item">
+                        <div class="achievement-icon">✦</div>
+                        <div>
+                            <h3>Perjalanan Pendidikan Tinggi</h3>
+                            <p>
+                                Memulai perjalanan sebagai mahasiswa
+                                Pendidikan Teknologi Informasi dan
+                                mengembangkan pengetahuan di bidang
+                                teknologi serta pendidikan.
+                            </p>
+                        </div>
+                    </article>
+
+                    <article class="achievement-item">
+                        <div class="achievement-icon">✎</div>
+                        <div>
+                            <h3>Pengembangan Portofolio Digital</h3>
+                            <p>
+                                Membangun website portofolio sebagai
+                                latihan membuat halaman web dan
+                                mendokumentasikan proses belajar.
+                            </p>
+                        </div>
+                    </article>
+
+                    <!-- Meraih Juara Mula 3 LKBB Cendrawasih Se-Jawa 2024 Meraih Juara Potensial 2 LKBB Semar Jilid 2 Se-Jawa Timur 2024 Meraih Juara kategori best administrasi LKBB Mahapatih Se-Nasional 2024 Meraih Juara Purwa 1 LKBB Ganaprasta Season 2 Se-Jawa Timur 2024Meraih Juara Utama 2 LPBB Piala Panglima TNI dalam rangka HUT TNI Ke-79 SeKabupaten Bojonegoro 2024 Meraih Juara Mula 1 LKBB PPI Lamongan 2024  -->
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="content-section" id="contact">
+            <div class="container contact-grid">
+                <div class="contact-intro">
+                    <div class="section-heading">
+                        <small>05 — Get In Touch</small>
+                    </div>
+
+                    <h2>Let's connect<br>and grow together.</h2>
+
+                    <p>
+                        Terbuka untuk bertukar ide, belajar bersama,
+                        dan berkolaborasi dalam hal positif seputar
+                        teknologi dan pendidikan.
+                    </p>
+                </div>
+
+                <div class="contact-list">
+                    <a class="contact-link"
+                       href="mailto:rahmaenggal2008@gmail.com">
+                        <span>Email</span>
+                        <strong>rahmaenggal2008@gmail.com</strong>
+                    </a>
+
+                    <!-- Ganti USERNAME dengan username GitHub kamu -->
+                    <a class="contact-link"
+                       href="https://github.com/rahmaenggal2008-pixel"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <span>GitHub</span>
+                        <strong>"https://github.com/rahmaenggal2008-pixel" ↗</strong>
+                    </a>
+
+                    <!-- Ganti URL LinkedIn dengan profil kamu -->
+                    <a class="contact-link"
+                       href="https://www.linkedin.com/in/rahmadhani-enggal-setya-putri-327a04389?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                       target="_blank"
+                       rel="noopener noreferrer">
+                        <span>LinkedIn</span>
+                        <strong>"https://www.linkedin.com/in/rahmadhani-enggal-setya-putri-327a04389?utm_source=share_via&utm_content=profile&utm_medium=member_android"
+                       target="_blank ↗</strong>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            © 2026 Rahmadhani Enggal Setya Putri.
+            Made with care & curiosity.
+        </p>
+    </footer>
+
+</body>
+</html>
